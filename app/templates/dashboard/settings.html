@@ -1,0 +1,125 @@
+{% extends 'dashboard/layout.html' %}
+{% block content %}
+
+<main class="w-full px-6 pb-6 pt-[100px] sm:pt-[156px] xl:px-[48px] xl:pb-[48px]">
+  <!-- write your code here-->
+  <div class="grid grid-cols-1 rounded-xl bg-white dark:bg-darkblack-600 xl:grid-cols-12">
+    <!-- Sidebar -->
+    <aside class="col-span-3 border-r border-bgray-200 dark:border-darkblack-400">
+      <!-- Sidebar Tabs -->
+
+      <div class="px-4 py-6">
+        <div class="tab flex gap-x-4 rounded-lg p-4 transition-all" data-tab="tab1">
+            <a href="{{ url_for('dashboard.profile')}}">
+                
+                <div
+                  class="tab-icon inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-bgray-100 transition-all dark:bg-darkblack-500">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="12" cy="17.5" rx="7" ry="3.5" stroke="currentColor" stroke-width="1.5"
+                      stroke-linejoin="round" />
+                    <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-base font-bold text-bgray-900 dark:text-white">
+                    Personal Informations
+                  </h4>
+                  <p class="mt-0.5 text-sm font-medium text-bgray-700 dark:text-darkblack-300">
+                    Update your account to unlock more features
+                  </p>
+                </div>
+
+            </a>
+        </div>
+        <div data-tab="tab2" class="tab active group flex gap-x-4 rounded-lg p-4 transition-all">
+            <a href="{{ url_for('dashboard.settings')}}">
+                
+                <div class="tab-icon inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full transition-all">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M16 8H8M16 8C18.2091 8 20 9.79086 20 12V18C20 20.2091 18.2091 22 16 22H8C5.79086 22 4 20.2091 4 18V12C4 9.79086 5.79086 8 8 8M16 8V6C16 3.79086 14.2091 2 12 2C9.79086 2 8 3.79086 8 6V8M14 15C14 16.1046 13.1046 17 12 17C10.8954 17 10 16.1046 10 15C10 13.8954 10.8954 13 12 13C13.1046 13 14 13.8954 14 15Z"
+                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-base font-bold text-bgray-900 dark:text-white">
+                    Security
+                  </h4>
+                  <p class="mt-0.5 text-sm font-medium text-bgray-700 dark:text-darkblack-300">
+                    Make it a habbit to update your security information
+                  </p>
+                </div>
+
+            </a>
+        </div>
+      </div>
+    </aside>
+    <!--Tab Content -->
+    <div class="tab-content col-span-9 px-10 py-8">
+      <!-- Personal Information -->
+      <!-- Security Password -->
+      <div id="tab2" class="tab-pane active">
+        <div class="flex flex-col gap-10 xl:flex-row xl:items-center">
+          <div class="max-w-[614px] grow">
+            <h3 class="mb-3 text-2xl font-bold text-bgray-900 dark:text-white">
+              Password
+            </h3>
+            <p class="fotn-medium text-sm text-bgray-500 dark:text-bgray-50">
+              Change or view your password.
+            </p>
+            <form action="" class="mt-6">
+              <div class="relative mb-6 flex flex-col">
+                <label for="old" class="mb-3 block text-sm font-medium text-bgray-500 dark:text-darkblack-300">Old
+                  password</label>
+                <input type="text"
+                  class="h-14 w-full rounded-lg border-0 bg-bgray-50 px-4 py-5 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white" />
+                <button class="absolute right-4 top-12">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3L21 21" stroke="#718096" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path
+                      d="M10.584 10.5869C10.2087 10.9619 9.99775 11.4707 9.99756 12.0012C9.99737 12.5317 10.2079 13.0406 10.583 13.4159C10.958 13.7912 11.4667 14.0021 11.9973 14.0023C12.5278 14.0025 13.0367 13.7919 13.412 13.4169"
+                      stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M9.363 5.36506C10.2204 5.11978 11.1082 4.9969 12 5.00006C16 5.00006 19.333 7.33306 22 12.0001C21.222 13.3611 20.388 14.5241 19.497 15.4881M17.357 17.3491C15.726 18.4491 13.942 19.0001 12 19.0001C8 19.0001 4.667 16.6671 2 12.0001C3.369 9.60506 4.913 7.82506 6.632 6.65906"
+                      stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+              <div class="relative mb-6 flex flex-col">
+                <label for="old" class="mb-3 block text-sm font-medium text-bgray-500 dark:text-darkblack-300">New
+                  password</label>
+                <input type="text"
+                  class="h-14 w-full rounded-lg border-0 bg-bgray-50 px-4 py-5 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500" />
+                <button class="absolute right-4 top-12">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3L21 21" stroke="#718096" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path
+                      d="M10.584 10.5869C10.2087 10.9619 9.99775 11.4707 9.99756 12.0012C9.99737 12.5317 10.2079 13.0406 10.583 13.4159C10.958 13.7912 11.4667 14.0021 11.9973 14.0023C12.5278 14.0025 13.0367 13.7919 13.412 13.4169"
+                      stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M9.363 5.36506C10.2204 5.11978 11.1082 4.9969 12 5.00006C16 5.00006 19.333 7.33306 22 12.0001C21.222 13.3611 20.388 14.5241 19.497 15.4881M17.357 17.3491C15.726 18.4491 13.942 19.0001 12 19.0001C8 19.0001 4.667 16.6671 2 12.0001C3.369 9.60506 4.913 7.82506 6.632 6.65906"
+                      stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <small class="mt-1 block text-xs text-bgray-500 dark:text-darkblack-300">Minimum 6 characters</small>
+              </div>
+              <div class="flex justify-end">
+                <button
+                  class="rounded-lg bg-success-300 px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-success-400 hover:bg-opacity-100">
+                  Save Changes
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="mx-auto hidden pt-10 xl:block">
+            <img src="{{ url_for('static', filename='dashboard/images/illustration/reset-password.svg') }}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- write your code here-->
+</main>
+{% endblock %}

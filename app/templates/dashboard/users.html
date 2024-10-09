@@ -1,0 +1,58 @@
+{% extends 'dashboard/layout.html' %}
+{% block content %}
+  <main class="w-full px-6 pb-6 pt-[100px] sm:pt-[156px] xl:px-[48px] xl:pb-[48px]">
+    <!-- write your code here-->
+    <div class="flex flex-col space-y-20 2xl:flex-row 2xl:space-x-11">
+      <div class="w-full 2xl:flex-1">
+        <div class="w-full overflow-x-scroll">
+          <table class="w-full">
+            <tbody>
+              {% for user in users %}
+                <tr class="bg-white dark:bg-darkblack-600">
+                  <td class="whitespace-nowrap rounded-l-lg p-4 text-sm font-medium">
+                    {% if user.is_admin %}
+                    <span>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M12.0001 17.75L5.82808 20.995L7.00708 14.122L2.00708 9.25495L8.90708 8.25495L11.9931 2.00195L15.0791 8.25495L21.9791 9.25495L16.9791 14.122L18.1581 20.995L12.0001 17.75Z"
+                          fill="#F6A723" stroke="#F6A723" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    {% endif %}
+                  </td>
+                  <td class="w-[400px] whitespace-nowrap py-4 text-sm text-gray-500 lg:w-auto">
+                    <div class="flex items-center gap-5">
+                      <div class="h-[64px] w-[64px]">
+                        <img class="h-full w-full rounded-lg object-cover" src="{{ url_for('static', filename='dashboard/images/uploads/' + user.image) }}"
+                          alt="" />
+                      </div>
+                      <div class="flex-1">
+                        <h4 class="text-lg font-bold text-bgray-900 dark:text-white">
+                          {{ user.firstname }} {{ user.lastname }}
+                        </h4>
+                        <div>
+                          <span class="text-base font-medium text-bgray-700 dark:text-bgray-50">{{ user.email }} •
+                          </span><span class="text-gray-500">{{ user.state }}, {{ user.country}}</span>
+                          <span class="text-gray-500">{{ user.signup_date.strftime('%d-%m-%Y') }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    <a href="{{ url_for('dashboard.edit_user', id=user.id) }}"
+                      class="ml-6 flex items-center justify-center rounded-xl bg-success-300 px-1 py-3 font-semibold text-white transition duration-300 ease-in-out hover:bg-success-400">
+                      View
+                    </a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- write your code here-->
+  </main>
+
+  {% endblock %}

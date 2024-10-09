@@ -1,0 +1,129 @@
+<div class="modal fixed inset-0 z-50 flex hidden items-center justify-center overflow-y-auto" id="multi-step-modal">
+    <div class="modal-overlay fixed inset-0 bg-gray-500 opacity-75 dark:bg-bgray-900 dark:opacity-50"></div>
+    <div class="modal-content mx-auto w-full max-w-xl px-4">
+      <div class="step-content step-1 relative top-40">
+        <div class="relative max-w-[530px] rounded-lg bg-white p-7 transition-all dark:bg-darkblack-600">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="font-poppins text-3xl font-medium text-bgray-900 dark:text-white">
+                Edit Contact
+              </h3>
+            </div>
+            <div>
+              <button type="button" id="step-1-cancel"
+                class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-bgray-200 text-bgray-700 hover:bg-red-500 hover:text-white focus:outline-none dark:bg-darkblack-500">
+                <span class="sr-only">Close</span>
+                <svg class="fill-bgray-900 dark:fill-darkblack-300" width="12" height="12" viewBox="0 0 12 12"
+                  fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.68746 10.609C9.94199 10.8636 10.3547 10.8636 10.6092 10.609C10.8638 10.3545 10.8638 9.94174 10.6092 9.6872L6.92202 5.99993L10.6093 2.31268C10.8638 2.05813 10.8638 1.64542 10.6093 1.39087C10.3547 1.13631 9.94199 1.13631 9.68746 1.39087L6.00019 5.07809L2.31292 1.39087C2.05837 1.13632 1.64566 1.13632 1.39111 1.39087C1.13656 1.64543 1.13656 2.05814 1.39111 2.3127L5.07835 5.99993L1.39112 9.6872C1.13657 9.94174 1.13657 10.3544 1.39112 10.609C1.64567 10.8636 2.05838 10.8636 2.31293 10.609L6.00019 6.92177L9.68746 10.609Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex justify-center py-8">
+              <div
+                class="relative flex h-28 w-28 items-center justify-center rounded-md border-2 border-dashed border-gray-300">
+                <div class="flex items-center justify-center text-sm text-gray-600">
+                  <label for="file-upload"
+                    class="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 dark:bg-transparent">
+                    <span>
+                      <svg class="stroke-bgray-900 dark:stroke-bgray-50" width="40" height="40" viewBox="0 0 40 40"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M19.9997 13.3333V26.6666M26.6663 19.9999H13.333M19.9997 36.6666C29.2044 36.6666 36.6663 29.2047 36.6663 19.9999C36.6663 10.7952 29.2044 3.33325 19.9997 3.33325C10.7949 3.33325 3.33301 10.7952 3.33301 19.9999C3.33301 29.2047 10.7949 36.6666 19.9997 36.6666Z"
+                          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <input id="file-upload" name="file-upload" type="file" class="sr-only" />
+                  </label>
+                </div>
+                <button
+                  class="absolute -right-3 -top-3 flex h-8 w-8 items-center justify-center rounded-full border bg-white dark:bg-darkblack-600">
+                  <svg class="fill-bgray-900 dark:fill-bgray-50" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M15.1817 3.5C15.0085 3.5 14.8371 3.5341 14.6771 3.60035C14.5172 3.66661 14.3719 3.76371 14.2494 3.88613L13.0763 5.05922L14.9408 6.92366L16.1139 5.75057C16.2363 5.62815 16.3334 5.48281 16.3996 5.32286C16.4659 5.16291 16.5 4.99148 16.5 4.81835C16.5 4.64522 16.4659 4.47379 16.3996 4.31384C16.3334 4.15389 16.2363 4.00856 16.1139 3.88613C15.9914 3.76371 15.8461 3.66661 15.6862 3.60035C15.5262 3.5341 15.3548 3.5 15.1817 3.5ZM13.8801 7.98432L12.0157 6.11988L4.51809 13.6175L3.81893 16.1811L6.38252 15.4819L13.8801 7.98432ZM14.1031 2.21453C14.4451 2.0729 14.8115 2 15.1817 2C15.5518 2 15.9182 2.0729 16.2602 2.21453C16.6021 2.35617 16.9128 2.56377 17.1745 2.82548C17.4362 3.08718 17.6438 3.39788 17.7855 3.73981C17.9271 4.08175 18 4.44824 18 4.81835C18 5.18846 17.9271 5.55495 17.7855 5.89689C17.6438 6.23882 17.4362 6.54952 17.1745 6.81123L7.30235 16.6834C7.21005 16.7757 7.09527 16.8423 6.96935 16.8766L2.94735 17.9736C2.6877 18.0444 2.41 17.9706 2.21969 17.7803C2.02937 17.59 1.95563 17.3123 2.02644 17.0526L3.12335 13.0306C3.1577 12.9047 3.2243 12.7899 3.3166 12.6977L13.1888 2.82548C13.4505 2.56377 13.7612 2.35617 14.1031 2.21453Z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div>
+              <form action="" class="space-y-6">
+                <div class="flex flex-col justify-between gap-4 md:flex-row">
+                  <div>
+                    <label for="fname" class="mb-2.5 block text-left text-sm text-bgray-500 dark:text-bgray-50">First
+                      Name</label>
+                    <input type="text"
+                      class="h-10 w-full rounded-lg border border-bgray-300 px-4 py-3 focus:border focus:border-success-300 focus:ring-0 dark:border-darkblack-400 dark:bg-darkblack-600" />
+                  </div>
+                  <div>
+                    <label for="lname" class="mb-2.5 block text-left text-sm text-bgray-500 dark:text-bgray-50">Last
+                      Name</label>
+                    <input type="text"
+                      class="h-10 w-full rounded-lg border border-bgray-300 px-4 py-3 focus:border focus:border-success-300 focus:ring-0 dark:border-darkblack-400 dark:bg-darkblack-600" />
+                  </div>
+                </div>
+                <div>
+                  <label for="lname"
+                    class="mb-2.5 block text-left text-sm text-bgray-500 dark:text-bgray-50">Email</label>
+                  <input type="text"
+                    class="h-10 w-full rounded-lg border border-bgray-300 px-4 py-3 focus:border focus:border-success-300 focus:ring-0 dark:border-darkblack-400 dark:bg-darkblack-600" />
+                </div>
+                <div>
+                  <label for="phone-number"
+                    class="mb-2.5 block text-left text-sm text-bgray-500 dark:text-bgray-50">Phone</label>
+                  <div class="relative mt-1 rounded-lg">
+                    <div class="absolute inset-y-0 left-0 flex items-center">
+                      <label for="country" class="sr-only">Country</label>
+                      <select id="country" name="country" autocomplete="country"
+                        class="rounded-none rounded-l-lg border-0 border-l border-r border-bgray-300 bg-bgray-100 py-2 pl-3 pr-7 text-gray-500 focus:border focus:border-success-300 focus:ring-0 dark:border-darkblack-400 dark:bg-darkblack-600">
+                        <option>+1</option>
+                        <option>+2</option>
+                        <option>+3</option>
+                      </select>
+                    </div>
+                    <input type="text" name="phone-number" id="phone-number"
+                      class="block w-full rounded-lg border-bgray-300 pl-16 focus:border focus:border-success-300 focus:ring-0 dark:border-darkblack-400 dark:bg-darkblack-600"
+                      placeholder="+1 (070) 123–9221" />
+                  </div>
+                </div>
+                <div>
+                  <label for="jobtitle" class="mb-2.5 block text-left text-sm text-bgray-500 dark:text-bgray-50">Job
+                    Title</label>
+                  <input type="text"
+                    class="h-10 w-full rounded-lg border border-bgray-300 px-4 py-3 focus:border focus:border-success-300 focus:ring-0 dark:border-darkblack-400 dark:bg-darkblack-600" />
+                </div>
+                <div>
+                  <label for="address"
+                    class="mb-2.5 block text-left text-sm text-bgray-500 dark:text-bgray-50">Address</label>
+                  <input type="text"
+                    class="h-10 w-full rounded-lg border border-bgray-300 px-4 py-3 focus:border focus:border-success-300 focus:ring-0 dark:border-darkblack-400 dark:bg-darkblack-600" />
+                </div>
+                <div>
+                  <label for="address" class="mb-2.5 block text-left text-sm text-bgray-500 dark:text-bgray-50">Date of
+                    Birth</label>
+                  <input type="date"
+                    class="h-10 w-full rounded-lg border border-bgray-300 px-4 py-3 focus:border focus:border-success-300 focus:ring-0 dark:border-darkblack-400 dark:bg-darkblack-600 dark:text-white dark:placeholder:text-white" />
+                </div>
+                <div>
+                  <label for="address"
+                    class="mb-2.5 block text-left text-sm text-bgray-500 dark:text-bgray-50">Address</label>
+                  <textarea
+                    class="h-36 w-full resize-none rounded-lg border border-bgray-300 px-4 py-3 focus:border focus:border-success-300 focus:ring-0 dark:border-darkblack-400 dark:bg-darkblack-600">
+                    </textarea>
+                </div>
+                <div class="flex justify-end">
+                  <button
+                    class="rounded-lg bg-success-300 px-6 py-3 text-base font-medium text-white hover:bg-success-400">
+                    Add Contact
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,173 @@
+{% extends 'public/layout.html' %}
+
+{% block content %}
+
+
+
+{% include 'public/breadcrumbs.html' %}
+
+<!--
+			=============================================
+				Service Details
+			==============================================
+			-->
+<div class="service-details section-margin-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="details-page-content">
+                    <h2 class="main-title">See what each credit card offers </h2>
+                    <h3 class="sub-heading">Alliant Visa® Platinum Card</h3>
+                    <p>
+                        Low Introductory Rate: Intro rate as low as 0% APR for 12 months on purchases and balance transfers (with standard variable rate of 15.49%–27.49% APR after that)
+                    </p>
+                    <p>
+                        Balance Transfers: It’s easy to transfer high balances from other cards. A low 2% fee of the amount of the transfer applies.
+                    </p>
+                    <p>
+                        No annual fee, generous credit lines, positive credit-building potential.
+                    </p>
+                    
+                    <h3 class="sub-heading">Alliant Cashback Visa® Signature Credit Card</h3>
+                    <p>
+                        Earn up to 2.5% cash back on your first $10,000 of qualifying eligible purchases (1.5% for purchases over $10,000).
+                    </p>
+                    <p>
+                        Travel Perks: No foreign transaction fees, emergency card replacement and more.
+                    </p>
+                    <p>
+                        No annual fee, no tricky categories to track, designed to recognize and reward excellent credit scores.
+                    </p>
+
+                    <div class="details-accordion">
+                        <h5 class="inner-heading">Credit Card FAQs</h5>
+                        <div class="panel-group theme-accordion" id="accordion">
+                            <div class="panel">
+                                <div class="panel-heading active-panel">
+                                    <h5 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                            How can I make a credit card payment? </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse1" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <p>
+                                            You can make a credit card payment any time by making a transfer in Alliant Online Banking, using Bill Pay, using the Alliant Mobile Banking App, or by calling us at {{ site_phone }}.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> <!-- /panel 1 -->
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                            How can I receive my credit card cash back?</a>
+                                    </h5>
+                                </div>
+                                <div id="collapse2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>
+                                            You can choose to receive cash back from your Alliant credit card via a credit card statement credit (appearing within one billing cycle) or as a deposit into your Alliant checking or savings.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> <!-- /panel 2 -->
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                            How long does it take to get a credit card in the mail? </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse3" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>
+                                            Once the application is accepted, it typically takes 14-21 days to receive your new Alliant Visa credit card in the mail.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> <!-- /panel 3 -->
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                            Can I get Visa Purchase Alerts?</a>
+                                    </h5>
+                                </div>
+                                <div id="collapse4" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>
+                                            Yes, you can get alerts for transactions in real-time and immediately identify potentially fraudulent activity. You can adjust your alerts to what makes sense for you and receive them via SMS text or email. Choose triggers for your alerts like reaching a purchase amount threshold, international purchases, purchases made on the internet or over the phone. Learn more and sign up at www.visa.com/purchasealerts
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> <!-- /panel 4 -->
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                                            Do you offer a debt protection plan?</a>
+                                    </h5>
+                                </div>
+                                <div id="collapse5" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>
+                                            Yes, we offer a debt protection benefit plan in the event of death, disability or involuntary unemployment. Read about the debt protection plan or speak to your Loan Consultant for additional details
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> <!-- /panel 5 -->
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                                            What should I do if I can’t make my payment on time?</a>
+                                    </h5>
+                                </div>
+                                <div id="collapse6" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>
+                                            Alliant offers a Loan Assistance Program to support our members who are suffering through a financial hardship and need extra help to get back on track financially. Learn more on the Alliant Loan Assistance Program page of our website.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> <!-- /panel 5 -->
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+                                            I lost my credit card or it was stolen, how do I get a new one?</a>
+                                    </h5>
+                                </div>
+                                <div id="collapse7" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>
+                                            If your credit card was lost or stolen, please report your card loss as soon as possible. You can report your card as lost/stolen in online banking, in our mobile banking app (under Card Management), or by calling 866-444-8529 (24/7).
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> <!-- /panel 5 -->
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                                            There are charges on my credit card I don’t recognize. What do I do?</a>
+                                    </h5>
+                                </div>
+                                <div id="collapse6" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>
+                                            To report an unrecognized charge, call the number on the back of your credit card at your earliest convenience. Alternatively, you can dispute the charges online through Alliant online banking. First, select your Visa card from your list of accounts. Then click the “Manage Accounts” tab, select “Dispute Transaction” and follow the prompts to identify and submit the specific transaction(s) you want to dispute.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> <!-- /panel 5 -->
+                        </div> <!-- end #accordion -->
+                    </div>
+                </div> <!-- /.details-page-content -->
+            </div> <!-- /.col- -->
+        </div>
+    </div> <!-- /.container -->
+</div> <!-- /.service-details -->
+
+{% endblock %}

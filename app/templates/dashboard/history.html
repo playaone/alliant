@@ -1,0 +1,486 @@
+{% extends 'dashboard/layout.html' %}
+{% block content %}
+    <main
+      class="w-full px-6 pb-6 pt-[100px] sm:pt-[156px] xl:px-[48px] xl:pb-[48px]"
+    >
+      <!-- write your code here-->
+      <div class="2xl:flex 2xl:space-x-[48px]">
+        <section class="mb-6 2xl:mb-0 2xl:flex-1">
+          <!--list table-->
+          <div
+            class="w-full rounded-lg bg-white px-[24px] py-[20px] dark:bg-darkblack-600"
+          >
+            <div class="flex flex-col space-y-5">
+              <div class="flex h-[56px] w-full space-x-4">
+              </div>
+              <div class="table-content w-full overflow-x-auto">
+                <table class="w-full">
+                  <tr
+                    class="border-b border-bgray-300 dark:border-darkblack-400"
+                  >
+                    <td
+                      class="inline-block w-[250px] px-6 py-5 lg:w-auto xl:px-0"
+                    >
+                      <div class="flex w-full items-center space-x-2.5">
+                        <span
+                          class="text-base font-medium text-bgray-600 dark:text-bgray-50"
+                        >
+                          Summary</span
+                        >
+                        <span>
+                          <svg
+                            width="14"
+                            height="15"
+                            viewBox="0 0 14 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10.332 1.31567V13.3157"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M5.66602 11.3157L3.66602 13.3157L1.66602 11.3157"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M3.66602 13.3157V1.31567"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M12.332 3.31567L10.332 1.31567L8.33203 3.31567"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-5 xl:px-0">
+                      <div class="flex w-full items-center space-x-2.5">
+                        <span
+                          class="text-base font-medium text-bgray-600 dark:text-bgray-50"
+                          >Date</span
+                        >
+                        <span>
+                          <svg
+                            width="14"
+                            height="15"
+                            viewBox="0 0 14 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10.332 1.31567V13.3157"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M5.66602 11.3157L3.66602 13.3157L1.66602 11.3157"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M3.66602 13.3157V1.31567"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M12.332 3.31567L10.332 1.31567L8.33203 3.31567"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-5 xl:px-0">
+                      <div class="flex items-center space-x-2.5">
+                        <span
+                          class="text-base font-medium text-bgray-600 dark:text-bgray-50"
+                        >
+                          Amount</span
+                        >
+                        <span>
+                          <svg
+                            width="14"
+                            height="15"
+                            viewBox="0 0 14 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10.332 1.31567V13.3157"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M5.66602 11.3157L3.66602 13.3157L1.66602 11.3157"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M3.66602 13.3157V1.31567"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M12.332 3.31567L10.332 1.31567L8.33203 3.31567"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-5 xl:w-[165px] xl:px-0">
+                      <div class="flex w-full items-center space-x-2.5">
+                        <span
+                          class="text-base font-medium text-bgray-600 dark:text-bgray-50"
+                          >Type</span
+                        >
+                        <span>
+                          <svg
+                            width="14"
+                            height="15"
+                            viewBox="0 0 14 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10.332 1.31567V13.3157"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M5.66602 11.3157L3.66602 13.3157L1.66602 11.3157"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M3.66602 13.3157V1.31567"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M12.332 3.31567L10.332 1.31567L8.33203 3.31567"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-5 xl:w-[165px] xl:px-0">
+                      <div class="flex w-full items-center space-x-2.5">
+                        <span class="text-base font-medium text-bgray-600"
+                          >Balance</span
+                        >
+                        <span>
+                          <svg
+                            width="14"
+                            height="15"
+                            viewBox="0 0 14 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10.332 1.31567V13.3157"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M5.66602 11.3157L3.66602 13.3157L1.66602 11.3157"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M3.66602 13.3157V1.31567"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M12.332 3.31567L10.332 1.31567L8.33203 3.31567"
+                              stroke="#718096"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  {% for transaction in transactions[:10] %}
+
+                    {% if transaction.sender in current_user.accounts %}
+                      <tr class="border-b border-bgray-300 dark:border-darkblack-400">
+                        <td class="px-6 py-5 xl:px-0">
+                          <div class="flex w-full items-center space-x-2.5">
+                            <p
+                              class="text-base font-semibold text-bgray-900 dark:text-white"
+                            >
+                              {% if transaction.receiver %}
+                                To: {{ (transaction.receiver.owner.firstname, transaction.receiver.owner.lastname, (transaction.receiver.account_number | replace(transaction.receiver.account_number[2:7], 'XXXX')) )| join(' ')}}
+                              {% else %}
+                                To: {{ (transaction.external_receiver.firstname, transaction.external_receiver.lastname, (transaction.external_receiver.account_number | replace(transaction.external_receiver.account_number[2:7], 'XXXX')) ) | join(' ') }}
+                              {% endif %}
+                            </p>
+                          </div>
+                        </td>
+                        <td class="px-6 py-5 xl:px-0">
+                          <p class="text-base font-medium text-bgray-900 dark:text-white">
+                            {{ transaction.date.strftime('%d-%m-%Y %H:%M:%S')}}
+                          </p>
+                        </td>
+                        <td class="px-6 py-5 xl:px-0">
+                          <p
+                            class="text-base font-medium text-bgray-900 dark:text-white"
+                          >
+                            ${{ transaction.amount | currency}}
+                          </p>
+                        </td>
+                        <td class="px-6 py-5 xl:w-[165px] xl:px-0">
+                          <div class="flex w-full items-center">
+                            <span
+                              class="block rounded-md bg-[#FAEFEE] px-4 py-1.5 text-sm font-semibold leading-[22px] text-[#FF4747] dark:bg-darkblack-500"
+                              >Debit</span
+                            >
+                          </div>
+                        </td>
+                        <td class="px-6 py-5 xl:w-[165px] xl:px-0">
+                          <div class="flex w-full items-center">
+                            <span
+                              class="block rounded-md bg-[#FDF9E9] px-4 py-1.5 text-sm font-semibold leading-[22px] text-warning-300 dark:bg-darkblack-500"
+                              >${{ transaction.sender_balance | currency}}</span
+                            >
+                          </div>
+                        </td>
+                      </tr>
+                    {% elif transaction.receiver in current_user.accounts %}
+                      <tr class="border-b border-bgray-300 dark:border-darkblack-400">
+                        <td class="px-6 py-5 xl:px-0">
+                          <div class="flex w-full items-center space-x-2.5">
+                            <p
+                              class="text-base font-semibold text-bgray-900 dark:text-white"
+                            >
+                              {% if transaction.sender %}
+                                From: {{ (transaction.sender.owner.firstname, transaction.sender.owner.lastname, (transaction.sender.account_number | replace(transaction.sender.account_number[2:7], 'XXXX')) )| join(' ')}}
+                              {% else %}
+                                From: {{ (transaction.external_sender.firstname, transaction.external_sender.lastname, (transaction.external_sender.account_number | replace(transaction.external_sender.account_number[2:7], 'XXXX')) ) | join(' ') }}
+                              {% endif %}
+                            </p>
+                          </div>
+                        </td>
+                        <td class="px-6 py-5 xl:px-0">
+                          <p class="text-base font-medium text-bgray-900 dark:text-white">
+                            {{ transaction.date.strftime('%d-%m-%Y %H:%M:%S')}}
+                          </p>
+                        </td>
+                        <td class="px-6 py-5 xl:px-0">
+                          <p
+                            class="text-base font-medium text-bgray-900 dark:text-white"
+                          >
+                            ${{ transaction.amount | currency}}
+                          </p>
+                        </td>
+                        <td class="px-6 py-5 xl:w-[165px] xl:px-0">
+                          <div class="flex w-full items-center">
+                            <span
+                              class="block rounded-md bg-success-50 px-4 py-1.5 text-sm font-semibold leading-[22px] text-success-400 dark:bg-darkblack-500"
+                              >Credit</span
+                            >
+                          </div>
+                        </td>
+                        <td class="px-6 py-5 xl:w-[165px] xl:px-0">
+                          <div class="flex w-full items-center">
+                            <span
+                              class="block rounded-md bg-[#FDF9E9] px-4 py-1.5 text-sm font-semibold leading-[22px] text-warning-300 dark:bg-darkblack-500"
+                              >${{ transaction.receiver_balance | currency}}</span
+                            >
+                          </div>
+                        </td>
+                      </tr>
+                    {% endif %}
+                  {% endfor %}
+                </table>
+              </div>
+              <div class="pagination-content w-full">
+                <div
+                  class="flex w-full items-center justify-center lg:justify-between"
+                >
+                  <div class="hidden items-center space-x-4 lg:flex">
+                    <span
+                      class="text-sm font-semibold text-bgray-600 dark:text-bgray-50"
+                      >Show result:</span
+                    >
+                    <div class="relative">
+                      <button
+                        onclick="dateFilterAction('#result-filter')"
+                        type="button"
+                        class="flex items-center space-x-6 rounded-lg border border-bgray-300 px-2.5 py-[14px] dark:border-darkblack-400"
+                      >
+                        <span
+                          class="text-sm font-semibold text-bgray-900 dark:text-bgray-50"
+                          >3</span
+                        >
+                        <span>
+                          <svg
+                            width="17"
+                            height="17"
+                            viewBox="0 0 17 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4.03516 6.03271L8.03516 10.0327L12.0352 6.03271"
+                              stroke="#A0AEC0"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <div
+                        id="result-filter"
+                        class="absolute right-0 top-14 z-10 hidden w-full overflow-hidden rounded-lg bg-white shadow-lg"
+                      >
+                        <ul>
+                          <li
+                            onclick="dateFilterAction('#result-filter')"
+                            class="text-bgray-90 cursor-pointer px-5 py-2 text-sm font-medium hover:bg-bgray-100"
+                          >
+                            1
+                          </li>
+                          <li
+                            onclick="dateFilterAction('#result-filter')"
+                            class="cursor-pointer px-5 py-2 text-sm font-medium text-bgray-900 hover:bg-bgray-100"
+                          >
+                            2
+                          </li>
+
+                          <li
+                            onclick="dateFilterAction('#result-filter')"
+                            class="cursor-pointer px-5 py-2 text-sm font-medium text-bgray-900 hover:bg-bgray-100"
+                          >
+                            3
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center space-x-5 sm:space-x-[35px]"
+                  >
+                    <button type="button">
+                      <span>
+                        <svg
+                          width="21"
+                          height="21"
+                          viewBox="0 0 21 21"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.7217 5.03271L7.72168 10.0327L12.7217 15.0327"
+                            stroke="#A0AEC0"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <div class="flex items-center">
+                      <button
+                        type="button"
+                        class="rounded-lg bg-success-50 px-4 py-1.5 text-xs font-bold text-success-300 dark:bg-darkblack-500 dark:text-bgray-50 lg:px-6 lg:py-2.5 lg:text-sm"
+                      >
+                        1
+                      </button>
+                      <button
+                        type="button"
+                        class="rounded-lg px-4 py-1.5 text-xs font-bold text-bgray-500 transition duration-300 ease-in-out hover:bg-success-50 hover:text-success-300 dark:hover:bg-darkblack-500 lg:px-6 lg:py-2.5 lg:text-sm"
+                      >
+                        2
+                      </button>
+
+                      <span class="text-sm text-bgray-500">. . . .</span>
+                      <button
+                        type="button"
+                        class="rounded-lg px-4 py-1.5 text-xs font-bold text-bgray-500 transition duration-300 ease-in-out hover:bg-success-50 hover:text-success-300 dark:hover:bg-darkblack-500 lg:px-6 lg:py-2.5 lg:text-sm"
+                      >
+                        20
+                      </button>
+                    </div>
+                    <button type="button">
+                      <span>
+                        <svg
+                          width="21"
+                          height="21"
+                          viewBox="0 0 21 21"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7.72168 5.03271L12.7217 10.0327L7.72168 15.0327"
+                            stroke="#A0AEC0"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- write your code here-->
+    </main>
+{% endblock %}

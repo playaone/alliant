@@ -1,0 +1,72 @@
+{% extends 'public/layout.html' %}
+
+{% block content %}
+
+
+
+{% include 'public/breadcrumbs.html' %}
+
+	<!-- 
+	=============================================
+		Contact Us Page
+	============================================== 
+	-->
+	<div class="contact-page-title">
+		<div class="container">
+			<h2>Talk to us about your question </h2>
+			<h3>Send message</h3>
+			<p>Got a question about what I can do for you, We’re always interested in new projects, big or small. Send us an email and we’ll get in touch shortly, or phone between 8:00 am and  7:00 pm Monday to Saturday.</p>
+		</div>
+	</div> <!-- /.contact-page-title -->
+	<div class="contact-page">
+		<div class="container">
+			<div class="contact-form-wrapper">
+				<div class="row">
+					<div class="col-md-8 col-xs-12 mx-auto">
+						<div class="contact-address">
+							<ul class="address">
+								<li><i class="fa fa-map-marker" aria-hidden="true"></i> Brooklyn, NY 10036, United States</li>
+								<li><i class="fa fa-envelope-o" aria-hidden="true"></i> info_pinaz@gmail.com</li>
+								<li><i class="fa fa-phone" aria-hidden="true"></i> +8801912704287</li>
+							</ul>
+							<ul class="social-icon">
+								<li><a href="#" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="#" class="tran3s"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a href="#" class="tran3s"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+								<li><a href="#" class="tran3s"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+								<li><a href="#" class="tran3s"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							</ul>
+						</div> <!-- /.contact-address -->
+					</div> <!-- /.col- -->
+				</div> <!-- /.row -->
+			</div> <!-- /.contact-form-wrapper -->
+		</div> <!-- /.container -->
+
+		<div class="contact-validation-markup">
+			<!--Contact Form Validation Markup -->
+			<!-- Contact alert -->
+			<div class="alert-wrapper" id="alert-success">
+				<div id="success">
+					<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
+					<div class="wrapper">
+						<p>Your message was sent successfully.</p>
+						</div>
+				</div>
+			</div> <!-- End of .alert-wrapper -->
+			<div class="alert-wrapper" id="alert-error">
+				<div id="error">
+					<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
+					<div class="wrapper">
+						<p>Sorry!Something Went Wrong.</p>
+					</div>
+				</div>
+			</div> <!-- End of .alert-wrapper -->
+		</div> <!-- /.contact-validation-markup -->
+	</div> <!-- /.contact-page -->
+
+
+
+
+	{% include 'public/bottom-banner.html' %}
+
+{% endblock %}

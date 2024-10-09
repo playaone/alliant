@@ -1,0 +1,231 @@
+{% extends 'public/layout.html' %}
+
+{% block content %}
+			<!-- 
+			=============================================
+				Theme Main Banner
+			============================================== 
+			-->
+			<div id="theme-main-banner" class="banner-one">
+				<div data-src="{{ url_for('static', filename='public/images/home/slide-1.jpg') }}">
+					<div class="camera_caption">
+						<div class="container">
+							<h3 class="wow fadeInUp animated p-color" data-wow-delay="0.4s">Unexpected expenses or home renovations on the horizon?</h3>
+							<h6 class="wow fadeInUp animated">Finance Services</h6>
+							<h1 class="wow fadeInUp animated" data-wow-delay="0.2s">Our limited-time low intro <br>HELOC rate can help!</h1>
+							<a href="{{ url_for('dashboard.register') }}" class="wow fadeInRight animated theme-button-one" data-wow-delay="0.6s">Get Started</a>
+						</div> <!-- /.container -->
+					</div> <!-- /.camera_caption -->
+				</div>
+				<div data-src="{{ url_for('static', filename='public/images/home/slide-2.jp') }}g">
+					<div class="camera_caption">
+						<div class="container">
+							<h6 class="wow fadeInUp animated">Finance Services</h6>
+							<h1 class="wow fadeInUp animated" data-wow-delay="0.2s">Your customers are your <br>greatest asset</h1>
+							<h3 class="wow fadeInUp animated p-color" data-wow-delay="0.4s">Invest in their identity.</h3>
+							<a href="service.html" class="wow fadeInRight animated theme-button-one" data-wow-delay="0.6s">Finance Services</a>
+						</div> <!-- /.container -->
+					</div> <!-- /.camera_caption -->
+				</div>
+				<div data-src="{{ url_for('static', filename='public/images/home/slide-3.jpg') }}">
+					<div class="camera_caption">
+						<div class="container">
+							<h6 class="wow fadeInUp animated">Finance Services</h6>
+							<h1 class="wow fadeInUp animated" data-wow-delay="0.2s">Your customers are your <br>greatest asset</h1>
+							<h3 class="wow fadeInUp animated p-color" data-wow-delay="0.4s">Invest in their identity.</h3>
+							<a href="service.html" class="wow fadeInRight animated theme-button-one" data-wow-delay="0.6s">Finance Services</a>
+						</div> <!-- /.container -->
+					</div> <!-- /.camera_caption -->
+				</div>
+			</div> <!-- /#theme-main-banner -->
+
+
+		
+			<!-- 
+			=============================================
+				Top Feature
+			============================================== 
+			-->
+			<div class="top-feature section-margin-bottom section-margin-top">
+				<div class="container">
+					<div class="feature-slider">
+						<div class="item">
+							<div class="single-feature">
+								<div class="icon"><img src="{{ url_for('static', filename='public/images/icon/1.png') }}" alt=""></div>
+								<h4><a href="#">Hold The Keys</a></h4>
+								<p>An {{ sitename }} car loan or refi puts you in the driver's seat with great low rates.</p>
+							</div> <!-- /.single-feature -->
+						</div> <!-- /.col- -->
+						<div class="item">
+							<div class="single-feature">
+								<div class="icon"><img src="{{ url_for('static', filename='public/images/icon/2.png') }}" alt=""></div>
+								<h4><a href="#">Save More Money</a></h4>
+								<p>Our high rate savings account pays you 15x the bank national average</p>
+							</div> <!-- /.single-feature -->
+						</div> <!-- /.col- -->
+						<div class="item">
+							<div class="single-feature">
+								<div class="icon"><img src="{{ url_for('static', filename='public/images/icon/3.png') }}" alt=""></div>
+								<h4><a href="#">Earn Unlimited Cash Back</a></h4>
+								<p>Unlimited cashback credit card with no annual fee and no tricky spending categories to track</p>
+							</div> <!-- /.single-feature -->
+						</div> <!-- /.col- -->
+					</div> <!-- /.feature-slider -->
+				</div> <!-- /.container -->
+			</div> <!-- /.top-feature -->
+
+
+			<!-- 
+			=============================================
+				About Company
+			============================================== 
+			-->
+			<div class="about-company section-margin-bottom">
+				<div class="container">
+					<div class="main-content-wrapper">
+						<div class="row">
+							<div class="col-md-7 col-xs-12">
+								<h2>About Our Company</h2>
+								<h4>More the 20 years experience </h4>
+								<p>
+									At {{ sitename }} , we know that success in business depends on more than just access to money. We understand the broader needs of individuals, businesses and professionals. Thus, fostering regional integration, as well as cross-border trade and investment is our strategy.
+								</p>
+								<p>A collection of intelligent, hardworking, and exceptionally dedicated individuals, who work hard to take this company beyound dreams</p>
+								<a href="{{ url_for('public.about') }}" class="theme-button-one">Read more details</a>
+							</div>
+						</div>
+					</div> <!-- /.main-content-wrapper -->
+				</div> <!-- /.container -->
+			</div> <!-- /.about-company -->
+
+
+			<!-- 
+			=============================================
+				Our Service
+			============================================== 
+			-->
+			<div class="our-service section-margin-bottom">
+				<div class="container">
+					<div class="theme-title">
+						<h2>Finance Services</h2>
+						<p>How workforce development programs turn talent puddles into talent pools , Hiring isn’t easy. Employers <br> might get hundreds </p>
+					</div> <!-- /.theme-title -->
+					<div class="service-slider">
+						<div class="item">
+							<div class="single-service">
+								<div class="text">
+									<h4><a href="">Loan insurance</a> <i class="flaticon-pie-chart"></i></h4>
+									<p>Loan insurance is essential to protect your loved ones and the property you buy in case of a hard blow.</p>
+								</div> <!-- /.text -->
+							</div> <!-- /.single-service -->
+						</div> <!-- /.col- -->
+						<div class="item">
+							<div class="single-service">
+								<div class="text">
+									<h4><a href="">Life insurance</a> <i class="flaticon-upload"></i></h4>
+									<p>Do you want to maintain your standard of living and that of your family in the event of death, work stoppage, job loss or disability?</p>
+								</div> <!-- /.text -->
+							</div> <!-- /.single-service -->
+						</div> <!-- /.col- -->
+						<div class="item">
+							<div class="single-service">
+								<div class="text">
+									<h4><a href="">Housing insurance</a> <i class="flaticon-devices"></i></h4>
+									<p>Because your home needs to be protected from burglary or fire, this option is yours.</p>
+								</div> <!-- /.text -->
+							</div> <!-- /.single-service -->
+						</div> <!-- /.col- -->
+						<div class="item">
+							<div class="single-service">
+								<div class="text">
+									<h4><a href="">Transport</a> <i class="flaticon-pie-chart"></i></h4>
+									<p>Because every driver is different, our warranties and options have been designed to fit your needs.</p>
+								</div> <!-- /.text -->
+							</div> <!-- /.single-service -->
+						</div> <!-- /.col- -->
+						<div class="item">
+							<div class="single-service">
+								<div class="text">
+									<h4><a href="">Optimal Protection</a> <i class="flaticon-upload"></i></h4>
+									<p>Ensure your housing, your health, your transport equipment or other. It is a significant security.</p>
+								</div> <!-- /.text -->
+							</div> <!-- /.single-service -->
+						</div> <!-- /.col- -->
+						<div class="item">
+							<div class="single-service">
+								<div class="text">
+									<h4><a href="">Financial security</a> <i class="flaticon-devices"></i></h4>
+									<p>Because each heritage tells a unique story, yours, and because you have strong demands, that's what you need.</p>
+								</div> <!-- /.text -->
+							</div> <!-- /.single-service -->
+						</div> <!-- /.col- -->
+					</div> <!-- /.service-slider -->
+				</div> <!-- /.container -->
+			</div> <!-- /.our-service -->
+
+
+			<!-- 
+			=============================================
+				Our Blog 
+			============================================== 
+			-->
+			<div class="our-blog section-margin-bottom">
+				<div class="container">
+					<div class="theme-title">
+						<h2>Make better financial decisions</h2>
+						<p>Our online banking services are even easier to use. Register Now - It's easy and fast! </p>
+					</div> <!-- /.theme-title -->
+					<div class="blog-slider">
+						<div class="item">
+							<div class="single-blog">
+								<div class="image"><img src="{{ url_for('static', filename='public/images/blog/1.jpg') }}" alt=""></div>
+								<div class="text">
+									<h4><a href="#">How to choose the best credit union checking account</a></h4>
+									<a href="#" class="view-more"><span>Reading  More</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+								</div>
+							</div> <!-- /.single-blog -->
+						</div>
+						<div class="item">
+							<div class="single-blog">
+								<div class="image"><img src="{{ url_for('static', filename='public/images/blog/2.jpg') }}" alt=""></div>
+								<div class="text">
+									<h4><a href="#">Credit union vs. bank savings: Choosing the best option</a></h4>
+									<a href="#" class="view-more"><span>Reading  More</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+								</div>
+							</div> <!-- /.single-blog -->
+						</div>
+						<div class="item">
+							<div class="single-blog">
+								<div class="image"><img src="{{ url_for('static', filename='public/images/blog/3.jpg') }}" alt=""></div>
+								<div class="text">
+									<h4><a href="#">Tired of paying ATM fees? Alliant offers ATM Rebates!</a></h4>
+									<a href="#" class="view-more"><span>Reading  More</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+								</div>
+							</div> <!-- /.single-blog -->
+						</div>
+					</div> <!-- /.blog-slider -->
+				</div> <!-- /.container -->
+			</div> <!-- /.our-blog -->
+
+
+			<!-- 
+			=============================================
+				Bottom Banner
+			============================================== 
+			-->
+			<div class="bottom-banner">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-9 col-sm-8 col-xs-12">
+							<h3>Become a member</h3>
+						</div>
+						<div class="col-md-3 col-sm-4 col-xs-12">
+							<a href="{{ url_for('dashboard.register') }}" class="theme-button-one float-right">Start now</a>
+						</div>
+					</div>
+				</div> <!-- /.container -->
+			</div> <!-- /.bottom-banner -->
+
+
+
+{% endblock %}

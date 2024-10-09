@@ -1,0 +1,281 @@
+{% extends 'dashboard/layout.html' %}
+{% block content %}
+
+<main class="w-full px-6 pb-6 pt-[100px] sm:pt-[156px] xl:px-[48px] xl:pb-[48px]">
+  <!-- write your code here-->
+  <div class="grid grid-cols-1 rounded-xl bg-white dark:bg-darkblack-600 xl:grid-cols-12">
+    <!-- Sidebar -->
+    <aside class="col-span-3 border-r border-bgray-200 dark:border-darkblack-400">
+      <!-- Sidebar Tabs -->
+
+      <div class="px-4 py-6">
+        <div class="tab active flex gap-x-4 rounded-lg p-4 transition-all" data-tab="tab1">
+            <a href="{{ url_for('dashboard.profile')}}">
+                
+                <div
+                  class="tab-icon inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-bgray-100 transition-all dark:bg-darkblack-500">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="12" cy="17.5" rx="7" ry="3.5" stroke="currentColor" stroke-width="1.5"
+                      stroke-linejoin="round" />
+                    <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-base font-bold text-bgray-900 dark:text-white">
+                    Personal Informations
+                  </h4>
+                  <p class="mt-0.5 text-sm font-medium text-bgray-700 dark:text-darkblack-300">
+                    Update your account to unlock more features
+                  </p>
+                </div>
+
+            </a>
+        </div>
+        <div data-tab="tab2" class="tab group flex gap-x-4 rounded-lg p-4 transition-all">
+            <a href="{{ url_for('dashboard.settings')}}">
+                
+                <div class="tab-icon inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full transition-all">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M16 8H8M16 8C18.2091 8 20 9.79086 20 12V18C20 20.2091 18.2091 22 16 22H8C5.79086 22 4 20.2091 4 18V12C4 9.79086 5.79086 8 8 8M16 8V6C16 3.79086 14.2091 2 12 2C9.79086 2 8 3.79086 8 6V8M14 15C14 16.1046 13.1046 17 12 17C10.8954 17 10 16.1046 10 15C10 13.8954 10.8954 13 12 13C13.1046 13 14 13.8954 14 15Z"
+                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-base font-bold text-bgray-900 dark:text-white">
+                    Security
+                  </h4>
+                  <p class="mt-0.5 text-sm font-medium text-bgray-700 dark:text-darkblack-300">
+                    Make it a habbit to update your security information
+                  </p>
+                </div>
+
+            </a>
+        </div>
+      </div>
+    </aside>
+    <!--Tab Content -->
+    <div class="tab-content col-span-9 px-10 py-8">
+      <!-- Personal Information -->
+      <div id="tab1" class="tab-pane active">
+        <div class="flex grid-cols-12 flex-col-reverse gap-12 xl:grid 2xl:flex-row">
+          <div class="xl:col-span-7 2xl:col-span-8">
+            <h3
+              class="border-b border-bgray-200 pb-5 text-2xl font-bold text-bgray-900 dark:border-darkblack-400 dark:text-white">
+              Personal Information's
+            </h3>
+            <div class="mt-8">
+              <form action="{{ url_for('dashboard.profile') }}" method="post">
+                {{ form.hidden_tag() }}
+                <div class="grid grid-cols-1 gap-6 2xl:grid-cols-2">
+                  <div class="flex flex-col gap-2">
+                    
+                      {{ form.firstname.label(for="firstname", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.firstname(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="firstname", value=current_user.firstname) }}
+                      {% if form.firstname.errors %}
+                          {% for error in form.firstname.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    {{ form.lastname.label(for="lastname", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.lastname(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="lastname", value=current_user.lastname) }}
+                      {% if form.lastname.errors %}
+                          {% for error in form.lastname.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.email.label(for="email", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.email(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="email", value=current_user.email) }}
+                      {% if form.email.errors %}
+                          {% for error in form.email.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                      
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.username.label(for="username", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.username(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="username", value=current_user.username) }}
+                      {% if form.username.errors %}
+                          {% for error in form.username.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.phone.label(for="phone", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.phone(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="phone", value=current_user.phone) }}
+                      {% if form.phone.errors %}
+                          {% for error in form.phone.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.occupation.label(for="occupation", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.occupation(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="occupation", value=current_user.occupation) }}
+                      {% if form.occupation.errors %}
+                          {% for error in form.occupation.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.ssn.label(for="ssn", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.ssn(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="ssn", value=current_user.ssn) }}
+                      {% if form.ssn.errors %}
+                          {% for error in form.ssn.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                </div>
+                <h4 class="pb-6 pt-8 text-xl font-bold text-bgray-900 dark:text-white">
+                  Personal Address
+                </h4>
+                <div class="grid grid-cols-1 gap-6 2xl:grid-cols-2">
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.address.label(for="address", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.address(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="address", value=current_user.address) }}
+                      {% if form.address.errors %}
+                          {% for error in form.address.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                      
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.city.label(for="city", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.city(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="city", value=current_user.city) }}
+                      {% if form.city.errors %}
+                          {% for error in form.city.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.state.label(for="state", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.state(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="state", value=current_user.state) }}
+                      {% if form.state.errors %}
+                          {% for error in form.state.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.country.label(for="country", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.country(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="country", value=current_user.country) }}
+                      {% if form.country.errors %}
+                          {% for error in form.country.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                </div>
+                <div class="flex justify-end">
+                  {{ form.submit(class="mt-10 rounded-lg bg-success-300 px-4 py-3.5 font-semibold text-white") }}
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="xl:col-span-5 2xl:col-span-4 2xl:mt-24">
+            <header class="mb-8">
+              <h4 class="mb-2 text-lg font-bold text-bgray-800 dark:text-white">
+                Update Profile
+              </h4>
+              <div class="relative m-auto h-40 w-40 text-center">
+                <img src="{{ url_for('static', filename='dashboard/images/uploads/' + current_user.image) }}" alt="" />
+                <button class="absolute bottom-1 right-4">
+                  <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="14.2414" cy="14.2414" r="14.2414" fill="#22C55E" />
+                    <path
+                      d="M14.6994 10.2363C15.7798 11.3167 16.8434 12.3803 17.9171 13.454C17.7837 13.584 17.6403 13.7174 17.5036 13.8574C15.5497 15.8114 13.5924 17.7653 11.6385 19.7192C11.5118 19.8459 11.3884 19.9726 11.2617 20.0927C11.2317 20.1193 11.185 20.1427 11.145 20.1427C10.1281 20.146 9.11108 20.1427 8.0941 20.146C8.02408 20.146 8.01074 20.1193 8.01074 20.0593C8.01074 19.049 8.01074 18.0354 8.01408 17.0251C8.01408 16.9784 8.03742 16.9217 8.06743 16.8917C9.26779 15.688 10.4682 14.4876 11.6685 13.2873C12.6655 12.2903 13.6591 11.2967 14.6561 10.2997C14.6761 10.2797 14.6861 10.253 14.6994 10.2363Z"
+                      fill="white" />
+                    <path
+                      d="M18.6467 12.7197C17.573 11.646 16.506 10.579 15.4424 9.51537C15.6324 9.31864 15.8292 9.11858 16.0259 8.91852C16.256 8.68845 16.4894 8.45838 16.7228 8.22831C17.0162 7.93822 17.4197 7.93822 17.7097 8.22831C18.4466 8.9552 19.1802 9.68542 19.9171 10.4123C20.2038 10.6957 20.2138 11.0992 19.9371 11.3859C19.5136 11.8261 19.0868 12.2629 18.6634 12.703C18.66 12.7097 18.65 12.7163 18.6467 12.7197Z"
+                      fill="white" />
+                  </svg>
+                </button>
+              </div>
+            </header>
+            <div>
+              <h4 class="mb-2 text-lg font-bold text-bgray-800 dark:text-white">
+                Update Cover
+              </h4>
+              <div class="relative w-full">
+                <img src="{{ url_for('static', filename='dashboard/images/others/cover.jpg') }}" class="w-full" alt="" />
+                <button class="absolute bottom-2 right-2">
+                  <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="14.2414" cy="14.2414" r="14.2414" fill="#22C55E" />
+                    <path
+                      d="M14.6994 10.2363C15.7798 11.3167 16.8434 12.3803 17.9171 13.454C17.7837 13.584 17.6403 13.7174 17.5036 13.8574C15.5497 15.8114 13.5924 17.7653 11.6385 19.7192C11.5118 19.8459 11.3884 19.9726 11.2617 20.0927C11.2317 20.1193 11.185 20.1427 11.145 20.1427C10.1281 20.146 9.11108 20.1427 8.0941 20.146C8.02408 20.146 8.01074 20.1193 8.01074 20.0593C8.01074 19.049 8.01074 18.0354 8.01408 17.0251C8.01408 16.9784 8.03742 16.9217 8.06743 16.8917C9.26779 15.688 10.4682 14.4876 11.6685 13.2873C12.6655 12.2903 13.6591 11.2967 14.6561 10.2997C14.6761 10.2797 14.6861 10.253 14.6994 10.2363Z"
+                      fill="white" />
+                    <path
+                      d="M18.6467 12.7197C17.573 11.646 16.506 10.579 15.4424 9.51537C15.6324 9.31864 15.8292 9.11858 16.0259 8.91852C16.256 8.68845 16.4894 8.45838 16.7228 8.22831C17.0162 7.93822 17.4197 7.93822 17.7097 8.22831C18.4466 8.9552 19.1802 9.68542 19.9171 10.4123C20.2038 10.6957 20.2138 11.0992 19.9371 11.3859C19.5136 11.8261 19.0868 12.2629 18.6634 12.703C18.66 12.7097 18.65 12.7163 18.6467 12.7197Z"
+                      fill="white" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- write your code here-->
+</main>
+{% endblock %}

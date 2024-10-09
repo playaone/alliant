@@ -1,0 +1,125 @@
+{% extends 'dashboard/login-layout.html' %}
+
+{% block content %}
+    <section class="bg-white dark:bg-darkblack-500">
+      <div class="flex flex-col lg:flex-row justify-between min-h-screen">
+        <!-- Left -->
+        <div class="lg:w-1/2 px-5 xl:pl-12 pt-10">
+          <header>
+            <a href="{{ url_for('public.index') }}" class="">
+              <img src="{{ url_for('static', filename='dashboard/images/logo/logo.webp')}}" width="200px" class="block dark:hidden" alt="Logo" />
+              <img src="{{ url_for('static', filename='dashboard/images/logo/logo-white.svg')}}" class="hidden dark:block" alt="Logo" />
+            </a>
+          </header>
+          <div class="max-w-[450px] m-auto pt-24 pb-16">
+            <header class="text-center mb-8">
+              <h2
+                class="text-bgray-900 dark:text-white text-4xl font-semibold font-poppins mb-2"
+              >
+                Sign in to {{ sitename }}.
+              </h2>
+              <p class="font-urbanis text-base font-medium text-bgray-600 dark:text-bgray-50">
+                Send, spend and save smarter
+              </p>
+            </header>
+            <form action="{{ url_for('dashboard.login') }}" method="post">
+              {{ form.hidden_tag() }}
+              <div class="mb-4">
+                {% if form.email.errors %}
+                {{ form.email( class="text-bgray-800 dark:text-white dark:bg-darkblack-500 dark:border-darkblack-400 text-base border border-bgray-300 h-14 w-full focus:border-success-300 focus:ring-0 invalid:border-red-500 rounded-lg px-4 py-3.5 placeholder:text-bgray-500 placeholder:text-base", placeholder="Email") }}
+                {% for error in form.email.errors %}
+                <p style="font-size:12px; color:#EF4444;">
+                  {{ error }}
+                </p>
+                {% endfor %}
+                {% else %}
+                {{ form.email( class="text-bgray-800 dark:text-white dark:bg-darkblack-500 dark:border-darkblack-400 text-base border border-bgray-300 h-14 w-full focus:border-success-300 focus:ring-0 rounded-lg px-4 py-3.5 placeholder:text-bgray-500 placeholder:text-base", placeholder="Email") }}
+                {% endif %}
+              </div>
+              <div class="mb-6 relative">
+                {% if form.password.errors %}
+                {{ form.password( class="text-bgray-800 dark:text-white dark:bg-darkblack-500 dark:border-darkblack-400 text-base border border-bgray-300 h-14 w-full focus:border-success-300 focus:ring-0 invalid:border-red-500 rounded-lg px-4 py-3.5 placeholder:text-bgray-500 placeholder:text-base", placeholder="Password") }}
+                {% for error in form.password.errors %}
+                <p style="font-size:12px; color:#EF4444;">
+                  {{ error }}
+                </p>
+                {% endfor %}
+                {% else %}
+                {{ form.password( class="text-bgray-800 dark:text-white dark:bg-darkblack-500 dark:border-darkblack-400 text-base border border-bgray-300 h-14 w-full focus:border-success-300 focus:ring-0 rounded-lg px-4 py-3.5 placeholder:text-bgray-500 placeholder:text-base", placeholder="Password") }}
+                {% endif %}
+                <button type="button" class="absolute top-4 right-4 bottom-4">
+                  <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 1L20 19" stroke="#718096" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path
+                      d="M9.58445 8.58704C9.20917 8.96205 8.99823 9.47079 8.99805 10.0013C8.99786 10.5319 9.20844 11.0408 9.58345 11.416C9.95847 11.7913 10.4672 12.0023 10.9977 12.0024C11.5283 12.0026 12.0372 11.7921 12.4125 11.417"
+                      stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M8.363 3.36506C9.22042 3.11978 10.1082 2.9969 11 3.00006C15 3.00006 18.333 5.33306 21 10.0001C20.222 11.3611 19.388 12.5241 18.497 13.4881M16.357 15.3491C14.726 16.4491 12.942 17.0001 11 17.0001C7 17.0001 3.667 14.6671 1 10.0001C2.369 7.60506 3.913 5.82506 5.632 4.65906"
+                      stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+              <div class="flex justify-between mb-7">
+                <div>
+                  <a
+                    href="{{ url_for('dashboard.send_reset_token') }}"
+                    data-target="#multi-step-modal"
+                    class="modal-open text-success-300 font-semibold text-base underline"
+                    >Forgot Password?</a
+                  >
+                </div>
+              </div>
+
+              {{ form.submit(class="py-3.5 flex items-center justify-center text-white font-bold bg-success-300 hover:bg-success-400 transition-all rounded-lg w-full")}}
+                
+            </form>
+            <p class="text-center text-bgray-900 dark:text-bgray-50 text-base font-medium pt-7">
+              Don’t have an account?
+              <a href="{{ url_for('dashboard.register') }}" class="font-semibold underline">Sign Up</a>
+            </p>
+            <p class="text-bgray-600 dark:text-white text-center text-sm mt-6">
+              @ {{ date.strftime('%Y') }} {{ sitename }}. All Right Reserved.
+            </p>
+          </div>
+        </div>
+        <!-- Right -->
+        <div class="lg:w-1/2 lg:block hidden bg-[#F6FAFF] dark:bg-darkblack-600 p-20 relative">
+          <ul>
+            <li class="absolute top-10 left-8">
+              <img src="{{ url_for('static', filename='dashboard/images/shapes/square.svg')}}" alt="" />
+            </li>
+            <li class="absolute right-12 top-14">
+              <img src="{{ url_for('static', filename='dashboard/images/shapes/vline.svg')}}" alt="" />
+            </li>
+            <li class="absolute bottom-7 left-8">
+              <img src="{{ url_for('static', filename='dashboard/images/shapes/dotted.svg')}}" alt="" />
+            </li>
+          </ul>
+          <div class="">
+            <img
+              src="{{ url_for('static', filename='dashboard/images/illustration/signin.svg')}}
+            "
+              alt=""
+            />
+          </div>
+          <div>
+            <div class="text-center max-w-lg px-1.5 m-auto">
+              <h3
+                class="text-bgray-900 dark:text-white font-semibold font-popins text-4xl mb-4"
+              >
+                Speady, Easy and Fast
+              </h3>
+              <p class="text-bgray-600 dark:text-bgray-50 text-sm font-medium">
+                {{ sitename }}. help you set saving goals, earn cash back offers, Go to
+                disclaimer for more details and get paychecks up to two days
+                early. Get a
+                <span class="text-success-300 font-bold">$20</span> bonus when
+                you receive qualifying direct deposits
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

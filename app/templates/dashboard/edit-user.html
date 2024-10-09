@@ -1,0 +1,191 @@
+{% extends 'dashboard/layout.html' %}
+{% block content %}
+
+<main class="w-full px-6 pb-6 pt-[100px] sm:pt-[156px] xl:px-[48px] xl:pb-[48px]">
+  <!-- write your code here-->
+  <div class="grid grid-cols-1 rounded-xl bg-white dark:bg-darkblack-600 xl:grid-cols-12">
+    <!--Tab Content -->
+    <div class="tab-content col-span-9 px-10 py-8">
+      <!-- Personal Information -->
+      <div id="tab1" class="tab-pane active">
+        <div class="">
+          <div class="xl:col-span-7 2xl:col-span-8">
+            <h3
+              class="border-b border-bgray-200 pb-5 text-2xl font-bold text-bgray-900 dark:border-darkblack-400 dark:text-white">
+              User Information
+            </h3>
+            <div class="mt-8">
+              <form action="{{ url_for('dashboard.edit_user', id=user.id) }}" method="post">
+                {{ form.hidden_tag() }}
+                <div class="grid grid-cols-1 gap-6 2xl:grid-cols-2">
+                  <div class="flex flex-col gap-2">
+                    
+                      {{ form.firstname.label(for="firstname", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.firstname(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="firstname", value=user.firstname) }}
+                      {% if form.firstname.errors %}
+                          {% for error in form.firstname.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    {{ form.lastname.label(for="lastname", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.lastname(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="lastname", value=user.lastname) }}
+                      {% if form.lastname.errors %}
+                          {% for error in form.lastname.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.email.label(for="email", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.email(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="email", value=user.email) }}
+                      {% if form.email.errors %}
+                          {% for error in form.email.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                      
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.username.label(for="username", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.username(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="username", value=user.username) }}
+                      {% if form.username.errors %}
+                          {% for error in form.username.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.phone.label(for="phone", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.phone(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="phone", value=user.phone) }}
+                      {% if form.phone.errors %}
+                          {% for error in form.phone.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.occupation.label(for="occupation", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.occupation(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="occupation", value=user.occupation) }}
+                      {% if form.occupation.errors %}
+                          {% for error in form.occupation.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.ssn.label(for="ssn", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.ssn(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="ssn", value=user.ssn) }}
+                      {% if form.ssn.errors %}
+                          {% for error in form.ssn.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                </div>
+                <h4 class="pb-6 pt-8 text-xl font-bold text-bgray-900 dark:text-white">
+                  Personal Address
+                </h4>
+                <div class="grid grid-cols-1 gap-6 2xl:grid-cols-2">
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.address.label(for="address", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.address(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="address", value=user.address) }}
+                      {% if form.address.errors %}
+                          {% for error in form.address.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                      
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.city.label(for="city", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.city(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="city", value=user.city) }}
+                      {% if form.city.errors %}
+                          {% for error in form.city.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.state.label(for="state", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.state(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="state", value=user.state) }}
+                      {% if form.state.errors %}
+                          {% for error in form.state.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    
+                    {{ form.country.label(for="country", class="text-base font-medium text-bgray-600 dark:text-bgray-50") }}
+
+                      {{ form.country(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="country", value=user.country) }}
+                      {% if form.country.errors %}
+                          {% for error in form.country.errors %}
+                              <div style="font-size: 12px; color:red;">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+
+                  </div>
+                </div>
+                <div class="flex justify-end">
+                  {{ form.submit(class="mt-10 rounded-lg bg-success-300 px-4 py-3.5 font-semibold text-white") }}
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- write your code here-->
+</main>
+{% endblock %}

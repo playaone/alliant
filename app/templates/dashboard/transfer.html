@@ -1,0 +1,166 @@
+{% extends 'dashboard/layout.html' %}
+{% block content %}
+
+<main class="w-full px-6 pb-6 pt-[100px] sm:pt-[156px] xl:px-[48px] xl:pb-[48px]">
+    <!-- write your code here-->
+    <div class="grid grid-cols-1 rounded-xl bg-white dark:bg-darkblack-600 xl:grid-cols-12">
+        
+        <!-- Sidebar -->
+        <aside class="col-span-3 border-r border-bgray-200 dark:border-darkblack-400">
+            <!-- Sidebar Tabs -->
+
+            <div class="px-4 py-6">
+                <div class="tab active flex gap-x-4 rounded-lg p-4 transition-all" data-tab="tab1">
+                    <a href="{{ url_for('dashboard.transfer')}}">
+                        
+                        <div
+                            class="tab-icon inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-bgray-100 transition-all dark:bg-darkblack-500">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="12" cy="17.5" rx="7" ry="3.5" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                                <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-base font-bold text-bgray-900 dark:text-white">
+                                To {{ sitename }}
+                            </h4>
+                            <p class="mt-0.5 text-sm font-medium text-bgray-700 dark:text-darkblack-300">
+                                Transfer to {{ sitename }} accounts 
+                            </p>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="flex gap-x-4 rounded-lg p-4 transition-all">
+                    <a href="{{ url_for('dashboard.transfer_inter')}}">
+
+                        <div class="tab-icon inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-bgray-100 transition-all">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18 15H12V7H18M18 15C19.1046 15 20 14.1046 20 13V9C20 7.89543 19.1046 7 18 7M18 15V20C18 21.1046 17.1046 22 16 22H8C6.89543 22 6 21.1046 6 20V4C6 2.89543 6.89543 2 8 2H16C17.1046 2 18 2.89543 18 4V7"
+                                    stroke-width="1.5" stroke="currentColor" stroke-linejoin="round" />
+                                <path
+                                    d="M13 19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19C11 18.4477 11.4477 18 12 18C12.5523 18 13 18.4477 13 19Z"
+                                    fill="currentColor" />
+                                <path stroke="currentColor" d="M20 10L12 10" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-base font-bold text-bgray-900 dark:text-white">
+                                To Other Banks
+                            </h4>
+                            <p class="mt-0.5 text-sm font-medium text-bgray-700 dark:text-darkblack-300">
+                                Transfer to any other bank in the world
+                            </p>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+        </aside>
+        <!--Tab Content -->
+        <div class="tab-content col-span-9 px-10 py-8">
+            <!-- Personal Information -->
+            <div id="tab1" class="tab-pane active">
+                <div class="grid-cols-7 xl:grid">
+                    <div class="col-start-1 col-end-7">
+                        <h3
+                            class="border-b border-bgray-200 pb-5 text-2xl font-bold text-bgray-900 dark:border-darkblack-400 dark:text-white">
+                            To {{ sitename }}
+                        </h3>
+                        <div class="mt-8">
+                            <form action="{{ url_for('dashboard.transfer') }}" method="post">
+
+                                {{ form_local.hidden_tag() }}
+                                
+
+                                <div class="mb-3">
+                                    <div class="flex flex-col gap-2">
+                                        {{ form_local.account.label(class="text-base font-medium text-bgray-600 dark:text-bgray-50", for="account")}}
+                                        
+                                        {{ form_local.account(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="account")}}
+                                        {% if form_local.account.errors %}
+                                            {% for error in form_local.account.errors %}
+                                                <div style="font-size: 12px; color:red;">
+                                                    {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 gap-6 2xl:grid-cols-2">
+                                    <div class="flex flex-col gap-2">
+                                        {{ form_local.account_number.label(class="text-base font-medium text-bgray-600 dark:text-bgray-50", for="account_number")}}
+
+                                        {{ form_local.account_number(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="account_number")}}
+                                        {% if form_local.account_number.errors %}
+                                            {% for error in form_local.account_number.errors %}
+                                                <div style="font-size: 12px; color:red;">
+                                                    {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                        
+                                    </div>
+                                    <div class="flex flex-col gap-2">
+                                        {{ form_local.amount.label(class="text-base font-medium text-bgray-600 dark:text-bgray-50", for="amount")}}
+
+                                        {{ form_local.amount(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="amount")}}
+                                        {% if form_local.amount.errors %}
+                                            {% for error in form_local.amount.errors %}
+                                                <div style="font-size: 12px; color:red;">
+                                                    {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 gap-6 2xl:grid-cols-2">
+                                    <div class="flex flex-col gap-2">
+                                        {{ form_local.remark.label(class="text-base font-medium text-bgray-600 dark:text-bgray-50", for="remark")}}
+
+                                        {{ form_local.remark(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="remark")}}
+                                        {% if form_local.remark.errors %}
+                                            {% for error in form_local.remark.errors %}
+                                                <div style="font-size: 12px; color:red;">
+                                                    {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                        
+                                    </div>
+                                    <div class="flex flex-col gap-2">
+                                        {{ form_local.pin.label(class="text-base font-medium text-bgray-600 dark:text-bgray-50", for="pin")}}
+
+                                        {{ form_local.pin(class="h-14 rounded-lg border-0 bg-bgray-50 p-4 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white", id="pin")}}
+                                        {% if form_local.pin.errors %}
+                                            {% for error in form_local.pin.errors %}
+                                                <div style="font-size: 12px; color:red;">
+                                                    {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                <h4 class="pb-6 pt-8 text-xl font-bold text-bgray-900 dark:text-white">
+                                    Account Details
+                                </h4>
+                                <div class="flex justify-end">
+                                    {{ form_local.submit(class="mt-10 rounded-lg bg-success-300 px-4 py-3.5 font-semibold text-white") }}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- write your code here-->
+</main>
+{% endblock %}
